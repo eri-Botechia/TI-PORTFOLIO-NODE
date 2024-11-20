@@ -1,0 +1,11 @@
+import { Request, Response } from "express";
+import products from './../../JSON/products.json';
+
+export const getSlash = async (req: Request, res: Response) => {
+    try {
+        res.status(200).json(products);
+    } catch (error) {
+        console.log(error);
+        res.status(400).send(error);
+    }
+};
